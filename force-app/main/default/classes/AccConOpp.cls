@@ -19,7 +19,7 @@ public class AccConOpp {
             }
         }
         return con;
-        //from github
+        //from VS Code
     }
     @auraEnabled
     public static list<opportunity> opty(string acc){
