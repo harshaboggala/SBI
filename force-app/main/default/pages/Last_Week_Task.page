@@ -1,0 +1,34 @@
+<apex:page controller="Last_Week_Task">
+    <apex:form >
+    	<apex:pageblock >
+        	<apex:pageblockbuttons location="bottom">
+                <apex:commandbutton value="get" action="{!Last_Week_Task}"/>
+            </apex:pageblockbuttons>
+            <apex:pageblocksection >
+         <!--   	<apex:selectList onchange="{!selectedField">
+                    <apex:selectOption itemLabel="id" itemValue="Id"/>
+                    <apex:selectOption itemLabel="FName" itemValue="First_Name__c"/>
+                    <apex:selectOption itemLabel="LName" itemValue="Last_Name__c"/>
+                    <apex:selectOption itemLabel="MName" itemValue="Midle_Name__c"/>
+                    <apex:selectOption itemLabel="DoB" itemValue="Date_of_Birth__c"/>
+                    <apex:selectOption itemLabel="Email" itemValue="Email_ID__c"/>
+                    <apex:selectOption itemLabel="Mobile" itemValue="Mobile_No__c"/>
+                </apex:selectList>  -->
+                <apex:selectList value="{!selectedTime}">
+                    <apex:selectOption itemLabel="This Week" itemValue="THIS_WEEK"/>
+                    <apex:selectOption itemLabel="Last Week" itemValue="LAST_WEEK"/>
+                    <apex:selectOption itemLabel="This Month" itemValue="THIS_MONTH"/>
+                    <apex:selectOption itemLabel="Last Month" itemValue="LAST_MONTH"/>
+                </apex:selectList>
+            </apex:pageblocksection>
+            <apex:pageBlockSection >
+            </apex:pageBlockSection>
+            <apex:pageblocktable value="{!std}" var="a">
+                <apex:column value="{!a.Name__c}" />
+                <apex:column value="{!a.Date_of_Birth__c}" />
+				<apex:column value="{!a.Email_ID__c}" />
+                <apex:column value="{!a.Name}" />
+            </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

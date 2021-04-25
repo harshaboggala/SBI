@@ -1,0 +1,20 @@
+<apex:page controller="Student_Insertion" sidebar="false" showHeader="false">
+    <sfds/>
+    <apex:form >
+        <apex:messages />
+    	<apex:pageblock >
+        	<apex:pageblockbuttons location="top">
+                <apex:commandButton value="save" action="{!create}" />
+           <!--     <apex:commandButton value='cancel' action='{!cancel}' />   -->
+            </apex:pageblockbuttons>
+            <apex:pageblocksection >
+                <apex:inputfield value="{!std.First_Name__c}" />
+                <apex:inputfield value="{!std.Last_Name__c}" />
+                <apex:inputfield value="{!std.Middle_Name__c}" />
+                <apex:inputfield value="{!std.Date_of_Birth__c}" />
+                <apex:inputfield value="{!std.Mobile_No__c}" />
+                <apex:inputfield value="{!std.Email_ID__c}" />
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

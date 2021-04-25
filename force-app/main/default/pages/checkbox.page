@@ -1,0 +1,19 @@
+<apex:page controller="checkbox">
+    <apex:slds />
+    <apex:form id="fm" >
+    	<apex:pageBlock id="pb" >
+        	<apex:pageBlockTable value="{!wList}" var="n" styleClass="slds-table slds-table--bordered slds-table--striped">
+            	<apex:column headerValue="check">
+                    <apex:inputCheckbox value="{!n.che}" />
+                </apex:column>
+                
+                <apex:column headerValue="Names" value="{!n.name}" />
+                
+            </apex:pageBlockTable>
+            <br/>
+            <apex:inputText value="{!text}" /><br/>
+            <apex:commandButton value="submit" action="{!callme}" /><br/><br/>
+            {!result}
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

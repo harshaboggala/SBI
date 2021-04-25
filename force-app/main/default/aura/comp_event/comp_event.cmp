@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:registerEvent name="abc" type="c.first_event" />
+    <aura:attribute name="result" type="string" default="component A" />
+    
+    <lightning:card title="component A" >
+    <lightning:button label="submit" onclick="{!c.callme}" />
+        {!v.result}
+    </lightning:card>
+</aura:component>

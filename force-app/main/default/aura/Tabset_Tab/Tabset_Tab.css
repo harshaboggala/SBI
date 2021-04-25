@@ -1,0 +1,11 @@
+.THIS.box {
+    height:350px;
+    width:500px;
+    border:2px solid blue;
+    margin-left:50px;
+    margin-top:50px;
+ }
+.THIS .box2{
+    margin-left:20px;
+    margin-top:20px;
+}

@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="name" type="string" />
+    <aura:handler  event="c.first_event" action="{!c.invoke}" />
+    <lightning:card title="component B" >
+    	{!v.name}
+    </lightning:card>
+    
+</aura:component>

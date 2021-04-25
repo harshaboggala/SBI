@@ -1,0 +1,50 @@
+<apex:page >
+    <apex:form >
+        <apex:sectionheader title="Student" subtitle="new Student"/>
+    	<apex:pageblock title="basic info">
+            <apex:pageblockbuttons location="top">
+            	<apex:commandButton value="submit"/>
+                <apex:commandButton value="cancel"/>
+            </apex:pageblockbuttons>
+            <apex:pageblocksection title="new Student" columns="1" collapsible="false">
+                <apex:pageblocksectionitem >
+                  	<apex:outputLabel >Enter your name</apex:outputLabel>
+                    <apex:inputtext />
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                  	<apex:outputLabel >Enter your age</apex:outputLabel>
+                    <apex:inputtext />
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                  	<apex:outputLabel >Enter your salary</apex:outputLabel>
+                    <apex:inputtext />
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                  	<apex:outputLabel >select</apex:outputLabel>
+                    <apex:selectList >
+                        <apex:selectOption itemLabel="hyd" itemValue="tg"/>
+                        <apex:selectOption itemLabel="ban" itemValue="ka"/>
+                        <apex:selectOption itemLabel="che" itemValue="tn"/>
+                    </apex:selectList>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                  	<apex:outputLabel >radio</apex:outputLabel>
+                    <apex:selectradio >
+                    	<apex:selectOption itemLabel="hyd" itemValue="tg"/>
+                        <apex:selectOption itemLabel="ban" itemValue="ka"/>
+                        <apex:selectOption itemLabel="che" itemValue="tn"/>
+                    </apex:selectradio>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                  	<apex:outputLabel >check box</apex:outputLabel>
+                    <apex:selectCheckboxes >
+                    	<apex:selectOption itemLabel="hyd" itemValue="tg"/>
+                        <apex:selectOption itemLabel="ban" itemValue="ka"/>
+                        <apex:selectOption itemLabel="che" itemValue="tn"/>
+                    </apex:selectCheckboxes>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

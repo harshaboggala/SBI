@@ -1,0 +1,5 @@
+<aura:component controller="apex_lightCall">
+    <aura:attribute name="Result" type="string"/>
+    <lightning:button label="click" onclick="{!c.show}" />
+    result:{!v.Result}
+</aura:component>

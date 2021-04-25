@@ -1,0 +1,38 @@
+<apex:page standardController="Student__c" recordSetVar="abc">
+    <apex:pageBlock title="dataTable">
+        <apex:dataTable value="{!abc}" var="a" border="1" cellpadding="10" cellspacing="5">
+        	<apex:column value="{!a.Name__c}"/>
+            <apex:column value="{!a.Age__c}"/>
+            <apex:column value="{!a.Mobile_No__c}"/>
+            <apex:column value="{!a.Email_ID__c}"/>
+    	</apex:dataTable>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <apex:dataTable value="{!abc}" var="">
+            <apex:column >
+                
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Mobile No</th>
+                            <th>Email ID</th>
+                        </tr>
+                        <tr>
+                            <td>Bhanu</td>
+                            <td>25</td>
+                            <td>1234567890</td>
+                            <td>abc@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td>vishnu</td>
+                            <td>28</td>
+                            <td>9876543210</td>
+                            <td>xyz@gmail.com</td>
+                        </tr>
+                    </table>
+               
+            </apex:column>
+        </apex:dataTable>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="Amount" type="integer" />
+    <aura:attribute name="Rate" type="integer" />
+    <aura:attribute name="Years" type="integer" />
+    <aura:attribute name="Interest" type="double" />
+    <aura:handler name="init" value="{!this}" action="{!c.cal}" />
+    Amount:{!v.Amount}<br/>
+    Rate:{!v.Rate}<br/>
+    Years:{!v.Years}<br/>
+    Interest:{!v.Interest} <br/>
+</aura:component>

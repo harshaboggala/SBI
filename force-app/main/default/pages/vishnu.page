@@ -1,0 +1,28 @@
+<apex:page id="page">
+    <apex:form id="fm">
+    	<apex:pageblock id="pb">
+            <apex:pageblocksection id="pbs">
+               <style>
+                 .blue{color: blue;}
+                .red{color: red;font-size:medium;}
+                .green{color: green;}
+                </style>
+                 <script>
+                   var n;
+                    var i;
+                    for(i=1;i<=100;i++){
+                          if(i%10==0){  
+                              document.write("<span class='red'>"+i+ "</span><br>");
+                           }
+                    	else if(i%2!=0){
+                            document.write("<span class='blue'>" +i+ "</span><br>");
+                            }
+                       else if(i%2==0){
+                               document.write("<span class='green'>" +i+ "</span><br>");
+                               }
+                     }
+                </script>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

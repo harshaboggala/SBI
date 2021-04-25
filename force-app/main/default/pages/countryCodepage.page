@@ -1,0 +1,38 @@
+<apex:page id="page">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    	function callme(){
+        var b=document.getElementById('page:fm:pb:sl').value;
+            if(b=="Select"){
+                //alert(b);
+              document.getElementById('page:fm:pb:d').style.display='none';
+                }
+        	else{
+                //alert(b);
+                document.getElementById('cval').innerHTML=b;
+                document.getElementById('page:fm:pb:d').style.display='block';
+                }
+        }
+    </script>
+    <apex:form id="fm">
+    	<apex:pageBlock id="pb">
+        	<apex:selectList size="1" onchange="callme()" id="sl">
+                <apex:selectOption itemLabel="-Select-" itemValue="Select" />
+                <apex:selectOption itemLabel="India" itemValue="+91" />
+                <apex:selectOption itemLabel="Pakistan" itemValue="+92" />
+                <apex:selectOption itemLabel="USA" itemValue="+1" />
+                <apex:selectOption itemLabel="Russia" itemValue="+7" />
+                <apex:selectOption itemLabel="Zimbambwe" itemValue="+263" />
+                <apex:selectOption itemLabel="Chaina" itemValue="+86" />
+                <apex:selectOption itemLabel="Nepal" itemValue="+977" />
+                <apex:selectOption itemLabel="Bangladesh" itemValue="+880" />
+                <apex:selectOption itemLabel="Colambia" itemValue="+97" />
+            </apex:selectList>
+            
+            <div id="d" style="display:block">
+                <apex:outputLabel id="cval" />
+            </div>    	
+           	</apex:pageBlock>
+        	
+    </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page controller="http_Utrace">
+    <apex:form id="fm">
+        <apex:pageBlock >
+        	<apex:inputText value="{!ip}" />
+        	<apex:CommandButton value="search" action="{!callme}" />
+            <apex:dataTable value="{!uMap}" var="a">
+            	<apex:column value="{!a}" />
+                <apex:column value="{!uMap[a]}" />
+            </apex:dataTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

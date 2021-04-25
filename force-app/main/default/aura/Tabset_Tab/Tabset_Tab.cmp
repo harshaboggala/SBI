@@ -1,0 +1,36 @@
+<aura:component controller="tabSet_ex">
+    <aura:attribute name="fname" type="string" />
+    <aura:attribute name="lname" type="string" />
+    <aura:attribute name="mail" type="string" />
+    <aura:attribute name="phone" type="string" />
+    <aura:attribute name="qual" type="string" />
+    <aura:attribute name="subject" type="string" />
+    <aura:attribute name="tid" type="string" />
+    <aura:attribute name="result" type="string" />
+    <div class="box">
+	<lightning:card title="Tab Example">
+        <div class="box2">
+    	<lightning:tabset selectedTabId="{!v.tid}">
+        	<lightning:tab label="tab1" id="one">
+                <lightning:input label="FirstName" value="{!v.fname}" />
+                <lightning:input label="LaststName" value="{!v.lname}" /><br/>
+                <center><lightning:button label="next" onclick="{!c.next}"/> </center>
+            </lightning:tab>
+            <lightning:tab label="tab2" id="two">
+            	<lightning:input label="Email" value="{!v.mail}" />
+                <lightning:input label="Phone" value="{!v.phone}" /><br/>
+                <center><lightning:button label="prev" onclick="{!c.prev}"/> 
+                <lightning:button label="next" onclick="{!c.next}"/> </center>
+            </lightning:tab>
+            <lightning:tab label="tab3" id="three">
+            	<lightning:input label="Qualification" value="{!v.qual}" />
+                <lightning:input label="Subject" value="{!v.subject}" /><br/>
+                <center><lightning:button label="prev" onclick="{!c.prev}"/>
+                <lightning:button label="Submit" onclick="{!c.show}"/></center>
+            </lightning:tab>
+        </lightning:tabset>
+            {!v.result}
+            </div>
+    </lightning:card>
+    </div>
+</aura:component>

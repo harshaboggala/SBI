@@ -1,0 +1,13 @@
+<aura:component controller="light_Interest">
+    <aura:attribute name="Amt" type="integer" />
+    <aura:attribute name="yrs" type="integer" />
+    <aura:attribute name="rt" type="integer" />
+    <aura:attribute name="intrt" type="integer" />
+    <lightning:card title="interest" >
+    <lightning:input label="amount" value="{!v.Amt}" /><br/>
+    <lightning:input label="years" value="{!v.yrs}" /><br/>
+    <lightning:input label="Rate" value="{!v.rt}" /><br/>
+    <lightning:input label="Interest" value="{!v.intrt}" /><br/>
+    <lightning:button label="find" onclick="{!c.callme}" />
+    </lightning:card>
+</aura:component>

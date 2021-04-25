@@ -1,0 +1,10 @@
+<apex:page controller="schema_Picklist" >
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:selectList >
+                <apex:selectOptions value="{!pl}" />
+            </apex:selectList>
+        </apex:pageBlock>
+    </apex:form>
+                
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page controller="Multiple_Records_Insert" >
+    <apex:form id="fm" >
+        <apex:slds />
+    	<apex:pageBlock id="pb" >
+        	<apex:pageBlockSection id="pbs" columns="5">
+            	<apex:repeat value="{!stdList}" var="std" id="rt">
+                    <apex:inputField value="{!std.First_Name__c}" />
+                    <apex:inputField value="{!std.Last_Name__c}" />
+                    <apex:inputField value="{!std.Mobile_No__c}" />
+                    <apex:inputField value="{!std.Email_ID__c}" />
+                    <apex:commandButton value="AddRow" action="{!newRow}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            
+            	<apex:pageBlockButtons location="bottom" >
+                    <apex:commandButton value="save" action="{!save}" />
+                    <apex:commandButton value="cancel" action="{!cancel}" />
+                </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,175 @@
+<apex:page id="page">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    function one(e){
+        if(e.value=='elect'){
+            document.getElementById('page:form:pb1:pbs1:pbsi:pen').style.display = 'block';
+            document.getElementById('cname').style.display = 'none';
+            document.getElementById('page:form:pb1:pbs1:pbsi:pen').innerHTML="electronics";
+        	document.getElementById('div1').style.display = 'none';
+        	document.getElementById('ff').style.display = 'none';
+        	document.getElementById('rf1').style.display = 'none';
+            document.getElementById('pl').style.display = 'none';
+            document.getElementById('rf2').style.display = 'none';}
+        else if(e.value=='pen'){
+            document.getElementById('page:form:pb1:pbs1:pbsi:pen').style.display = 'block';
+          	document.getElementById('page:form:pb1:pbs1:pbsi:pen').innerHTML="pen selected";
+        	document.getElementById('div1').style.display = 'none';
+            document.getElementById('rf1').style.display = 'none';
+            document.getElementById('rf2').style.display = 'none';
+        	document.getElementById('cname').style.display = 'none';
+            document.getElementById('pl').style.display = 'none';
+        	document.getElementById('ff').style.display = 'none';}
+        else if(e.value=='paper'){
+            // $('[id$=pbs2]').show();
+            document.getElementById('page:form:pb1:pbs1:pbsi:pen').style.display = 'none';
+            document.getElementById('div1').style.display = 'block';
+        }
+        }
+function two(t){
+        if(t.value=='yes'){
+            //document.write(t.value);
+            document.getElementById('page:form:pb1:pbs2:no').style.display = 'none';
+            document.getElementById('rf1').style.display = 'block';
+            document.getElementById('rf2').style.display = 'block';
+            }
+        else if(t.value=='no'){
+            document.getElementById('page:form:pb1:pbs2:no').style.display = 'block';
+            document.getElementById('rf1').style.display = 'none';
+            document.getElementById('rf2').style.display = 'none';
+            document.getElementById('pl').style.display = 'none';
+        	document.getElementById('page:form:pb1:pbs2:no').innerHTML ="selected no";
+            document.getElementById('cname').style.display = 'none';
+            document.getElementById('ff').style.display = 'none';
+            }
+    }
+    function three(bdf){
+        if(bdf.value=="yes"){
+            document.getElementById('ff').style.display = 'block';
+            document.getElementById('pl').style.display = 'none';
+        	}
+        else if(bdf.value=="no"){
+            document.getElementById('ff').style.display = 'none';
+            document.getElementById('pl').style.display = 'block';
+            }
+        }
+    function four(pli){
+        //var pli=document.getElementById('pl:pli').value;
+        if(pli.value=='no'){
+            document.getElementById('cname').style.display = 'block';
+            document.getElementById('ff').style.display = 'none';
+            }
+        else{
+            document.getElementById('cname').style.display = 'none';
+            document.getElementById('ff').style.display = 'block';}
+        }
+    function five(){
+        document.getElementById('ff').style.display = 'block';
+        /* var cname=document.getElementById('cname:pbs:pbsi:enterc').value;
+        //document.write(cname);
+        
+            
+         }
+        else
+            document.getElementById('ff').style.display = 'none';*/
+        }
+    </script>
+    <apex:form id="form">
+		<apex:pageblock id="pb1">
+            <apex:pageblocksection columns="1" id="pbs1">       
+                <apex:selectRadio onchange="one(this)" label="choose one">
+                    <apex:selectoption itemlabel="paper" itemvalue="paper"/>
+                    <apex:selectoption itemlabel="elec" itemvalue="elect"/>
+                    <apex:selectoption itemlabel="pen" itemvalue="pen" />
+                </apex:selectRadio>
+                <apex:pageblocksectionitem id="pbsi">
+                <apex:outputtext id="pen" style="display:block; margin:auto; width:50%; color:red;"/>
+                </apex:pageblocksectionitem>
+         	</apex:pageblocksection>
+            <div id="div1" style="display:none">
+        	<apex:pageblocksection columns="1" id="pbs2">             
+                <apex:selectRadio label="are you graduate?" id="paper" onchange="two(this)">
+                    <apex:selectoption itemlabel="yes" itemvalue="yes"/>
+                    <apex:selectoption itemlabel="no" itemvalue="no"/>
+                </apex:selectRadio>
+            <apex:outputlabel id="no" style="display:block ; margin:auto; width:58%; color:green;"/>
+            </apex:pageblocksection>
+            </div>
+            <div style="display:none;" id="rf1">
+            <apex:pageblocksection columns="1" id="pbs3">
+            
+                <apex:pageBlockSectionItem >
+            		<apex:outputlabel value="FirstName"/>
+            		<apex:inputtext id="fname"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionitem >
+                    <apex:outputlabel value="Last Name"/>
+                    <apex:inputtext id="lname"/>
+                </apex:pageBlockSectionitem>
+                 <apex:pageBlockSectionitem >
+                    <apex:outputlabel value="Age"/>
+                    <apex:inputtext id="age"/>
+                </apex:pageBlockSectionitem>
+                <apex:pageBlockSectionitem >
+                    <apex:outputlabel value="Email"/>
+                    <apex:inputtext id="email"/>
+                </apex:pageBlockSectionitem>                
+                <apex:selectRadio id="college" onchange="three(this)" label="belongs to this college?">
+                    	<apex:selectoption itemlabel="yes" itemvalue="yes"/>
+                    	<apex:selectoption itemlabel="no" itemvalue="no"/>
+                </apex:selectRadio>
+                </apex:pageblocksection>
+            </div>
+                <div style="display:none" id="pl">
+                <apex:pageblocksection columns="1">
+                <apex:selectlist size="1" onclick="four(this)" id="pli" label="select your college">
+                	<apex:selectoption itemlabel="svce" itemvalue="svce"/>
+                   	<apex:selectoption itemlabel="kmm" itemvalue="kmm"/> 
+                    <apex:selectoption itemlabel="svec" itemvalue="svec"/>
+                    <apex:selectoption itemlabel="not Identified" itemvalue="no"/>
+                </apex:selectlist>
+                </apex:pageblocksection>
+                </div>
+                <div style="display:none" id="cname">
+                <apex:pageblocksection id="pbs">
+                <apex:pageBlockSectionitem id="pbsi">
+                    <apex:outputlabel value="Enter your college name"/>
+                    <apex:inputtext id="enterc" onchange="five()" required="true" alt=""/>
+                </apex:pageBlockSectionitem>
+                </apex:pageblocksection>
+                </div>
+            	<div id="rf2" style="display:none">
+                <apex:pageblocksection >
+                <apex:pageBlockSectionitem >
+                    <apex:outputlabel value="Phone"/>
+                    <apex:inputtext id="phone"/>
+                </apex:pageBlockSectionitem>
+                </apex:pageblocksection>
+                </div>
+        </apex:pageblock>
+        <apex:pageblock >
+            <span style="display:none" id="ff">
+            <apex:pageblocksection columns="1">
+            	<apex:pageBlockSectionItem >
+            		<apex:outputlabel value="Quqlification"/>
+            		<apex:inputtext id="qual"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionitem >
+                    <apex:outputlabel value="grade"/>
+                    <apex:inputtext id="grade"/>
+                </apex:pageBlockSectionitem>
+                 <apex:pageBlockSectionitem >
+                    <apex:outputlabel value="Year of joining"/>
+                    <apex:inputtext id="yj"/>
+                </apex:pageBlockSectionitem>
+                <apex:pageBlockSectionitem >
+                    <apex:outputlabel value="Year of Passout"/>
+                    <apex:inputtext id="yp"/>
+                </apex:pageBlockSectionitem>
+                
+            </apex:pageblocksection>
+                
+            </span>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page standardController="Student__c" recordSetVar="aaa">
+    <apex:pageBlock title="Student">
+        <apex:dataList value="{!aaa}" var="x">
+            {!x.Name__c}
+        </apex:dataList>
+    </apex:pageBlock>
+    <apex:pageBlock title="Student">
+        <apex:dataList value="{!aaa}" var="x" type="circle">
+            {!x.Name__c}
+        </apex:dataList>
+    </apex:pageBlock>
+</apex:page>

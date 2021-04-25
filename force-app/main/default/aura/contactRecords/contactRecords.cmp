@@ -1,0 +1,8 @@
+<aura:component access="global" controller="contactRecords">
+    <aura:attribute name="accName" type="String" />
+    <aura:attribute name="Data" type="Contact" />
+    <aura:attribute name="fields" type="list" default="{'FirstName': , 'LastName': , 'Id': }" />
+    <lightning:input label="enter Account Name" value="{!v.accName}" />
+    <lightning:button label="Search" onclick="{!c.myAction}" />
+    <lightning:datatable keyField="Id" data="{!v.Data}" columns="{!v.fields}" />
+</aura:component>

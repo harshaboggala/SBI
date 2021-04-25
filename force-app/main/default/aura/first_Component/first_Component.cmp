@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable" >
+    Name: Bhanu	<br/>
+    Age	: 26	<br/>
+    City: palamaner
+</aura:component>

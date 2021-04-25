@@ -1,0 +1,15 @@
+<aura:component >
+    <lightning:card title="Account" iconName="standard:account" footer="my footer" >
+    	<aura:set attribute="actions" >
+            <lightning:button label="save" />
+            <lightning:button label="cancel" />
+            
+        </aura:set>
+        Name:<br/>
+        Industry:<br/>
+        Rating:<br/>
+        <aura:set attribute="footer" >
+            <lightning:button label="create" />
+        </aura:set>
+    </lightning:card>
+</aura:component>

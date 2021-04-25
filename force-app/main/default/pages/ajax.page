@@ -1,0 +1,21 @@
+<apex:page id="page">
+    <script src="/soap/ajax/50.0/connection.js" type="text/javascript">
+    </script>
+    	<script>
+    	
+    //alert(sforce.connection.sessionId);
+        function call(){
+        sforce.connection.sessionId='{!GETSESSIONID()}';
+        var st=document.getElementById('page:fm:nm').value;
+            //alert(st);
+        var query="select id,Name__c from Student__c where Name__c=\'"+st+"\'";
+        var result=sforce.connection.query(query);
+        var rec=result.getArray('records');
+        alert(rec);
+        }
+        </script>
+    <apex:form id="fm">
+        <apex:inputtext id="nm" />
+        <apex:commandbutton value="search" onclick="call()" />
+    </apex:form>
+</apex:page>

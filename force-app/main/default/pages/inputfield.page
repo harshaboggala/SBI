@@ -1,0 +1,19 @@
+<apex:page standardController="Student__c">
+    <apex:form id="fm">
+    	<apex:sectionHeader title="Student" subtitle="New Student" help="help"/>
+        <apex:pageBlock title="Student Edit">
+            <apex:pageblockbuttons location="top">
+            	<apex:commandButton value="save"/>
+                <apex:commandButton value="cancel" reRender="fm"/>
+            </apex:pageblockbuttons>
+        		<apex:pageblocksection title="Basic Info">
+             		<apex:inputfield value="{!Student__c.First_Name__c}"/>
+                	<apex:inputfield value="{!Student__c.Middle_Name__c}"/>
+                	<apex:inputfield value="{!Student__c.Last_Name__c}"/>
+                	<apex:inputfield value="{!Student__c.Date_of_Birth__c}"/>
+                	<apex:inputfield value="{!Student__c.Mobile_No__c}"/>
+                	<apex:inputfield value="{!Student__c.Email_ID__c}"/>	
+         		</apex:pageblocksection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

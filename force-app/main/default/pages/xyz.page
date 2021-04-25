@@ -1,0 +1,25 @@
+<apex:page standardController="Student__c" recordSetVar="abc">
+    <apex:form >
+        <apex:pageblock title="Student">
+            <apex:pageblockbuttons >
+                <apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="cancel" action="{!cancel}"/>
+            </apex:pageblockbuttons>
+            <apex:pageblocktable value="{!abc}" var="a">
+                <apex:column >
+                    <apex:facet name="header"><apex:inputCheckbox /></apex:facet> 
+                    <apex:inputCheckbox />
+                </apex:column>
+                <apex:column headerValue="Student Name">
+                    <apex:commandLink value="{!a.Name__c}" action="{Student__c.Name}"/>
+                </apex:column>
+                <apex:column value="{!a.Email_ID__c}"/>
+                <apex:column value="{!a.Age__c}"/>
+                <apex:column >
+                    <apex:commandButton value="edit" action="{!edit}"/>
+                    <apex:commandButton value="del" action="{!delete}"/>
+                </apex:column>
+            </apex:pageblocktable>
+        </apex:pageblock>    
+    </apex:form>
+</apex:page>

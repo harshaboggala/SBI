@@ -1,0 +1,17 @@
+<aura:component controller="InsertAcc">
+    <aura:attribute name="acc" type="Account" default="{'sObjectType':'Account','Name':'','AnnualRevenue':'','Industry':'','Rating':'','Phone':''}"/>
+    <aura:attribute name="result" type="string" />
+    <div class="box" >
+	<lightning:card title="New Account">
+        <div class="box2" >
+        <lightning:input label="Name" value="{!v.acc.Name}" />
+        <lightning:input label="AnnualRevenue" value="{!v.acc.AnnualRevenue}" />
+        <lightning:input label="Industry" value="{!v.acc.Industry}" />
+        <lightning:input label="Rating" value="{!v.acc.Rating}" />
+        <lightning:input label="Phone" value="{!v.acc.Phone}" />
+        <center> <lightning:button label="save" onclick="{!c.show}" /> </center>
+        {!v.result}
+            </div>
+    </lightning:card>
+    </div>
+</aura:component>

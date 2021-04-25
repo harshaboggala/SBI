@@ -1,0 +1,14 @@
+<apex:page controller="select_option" showHeader="false" wizard="true">
+    <sldc/>
+    <apex:form id="fm">
+        <apex:pageblock >
+    	<apex:pageblockbuttons location="top">
+            <apex:commandbutton value="submit" action="{!call}" rerender="fm"/>
+        </apex:pageblockbuttons>
+        <apex:selectlist value="{!selected}" size="1">
+            <apex:selectoptions value="{!options}" />
+            </apex:selectlist><br/><br/>
+        </apex:pageblock>
+        {!result}
+    </apex:form>
+</apex:page>

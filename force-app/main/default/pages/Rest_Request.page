@@ -1,0 +1,47 @@
+<apex:page controller="Rest_Request">
+    <apex:form id="fm" >
+    	<apex:pageBlock >
+            
+            <apex:pageBlockSection columns="1" rendered="{!flag}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="clientid" />
+            		<apex:inputText value="{!clientid}" label="clientid" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="clientsecret" />
+            		<apex:inputText value="{!clientsecret}" label="clientsecret" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="username" />
+            		<apex:inputText value="{!username}" label="username"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="password" />
+            		<apex:inputText value="{!password}" label="password"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton value="Submit" action="{!callme}" reRender="fm" />
+                </apex:pageBlockSectionItem>
+            
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" rendered="{!flag2}" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Name" />
+            		<apex:inputText value="{!Name}" label="Name" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Stage" />
+            		<apex:inputText value="{!Stage}" label="Stage" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="CloseDate" />
+            		<apex:inputText value="{!CloseDate}" label="CloseDate"/>
+                </apex:pageBlockSectionItem>
+                
+                    <apex:commandButton value="create" action="{!create}" reRender="fm" />
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        {!status}
+    </apex:form>
+</apex:page>

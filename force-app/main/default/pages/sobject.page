@@ -1,0 +1,32 @@
+<apex:page controller="sobject1">
+    <apex:form >
+    	<apex:pageblock >
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="save" action="{!create}"/>
+                <apex:commandButton value="cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageblocksection columns="1">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="FirstName"/>
+                    <apex:inputfield value="{!std.First_Name__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="LastName"/>
+                    <apex:inputfield value="{!std.Last_Name__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email_ID"/>
+                    <apex:inputfield value="{!std.Email_ID__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Mobile_No"/>
+                    <apex:inputfield value="{!std.Mobile_No__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Date of Birth"/>
+                	<apex:inputfield value="{!std.Date_of_Birth__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

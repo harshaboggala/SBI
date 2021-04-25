@@ -1,0 +1,36 @@
+<apex:page controller="deleteController">
+   
+ <style type="text/css">
+  #title {
+  font-size: 150%;
+  margin-left: 30%;
+  }
+ </style>
+ 
+  <h2 id="title">Delete Banks Records</h2><br/><br/>
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!bankList}" var="b" id="theTable">
+            <apex:column headervalue="First Name">
+                <apex:OutputText value="{!b.First_Name__c}" /> 
+            </apex:column>            
+            <apex:column headervalue="Source">
+                <apex:OutputText value="{!b.Last_Name__c}" />
+            </apex:column>
+            <apex:column headervalue="Services">
+                <apex:inputText value="{!b.Mobile_No__c}" />
+            </apex:column>
+            <apex:column headervalue="Region">
+                <apex:inputText value="{!b.Email_ID__c}" />
+            </apex:column>            
+           <apex:column >                      
+              <apex:facet name="header">Action</apex:facet>
+                <apex:commandLink type="button" action="{!deleteRecord}" value="Del" onclick="if(!confirm('Are you sure?')) return false;">
+                 <apex:param name="rowId" assignTo="{!bkId}" value="{!b.Id}"/>                 
+               </apex:commandLink>
+               </apex:column>                                                                                
+    </apex:pageBlockTable>
+
+    </apex:pageBlock>
+    </apex:form> 
+</apex:page>

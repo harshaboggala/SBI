@@ -1,0 +1,28 @@
+<apex:page >
+    <apex:form >
+        picklist:
+    	<apex:selectList size="1">
+            <apex:selectOption itemLabel="hyd" itemValue="tg"/>
+            <apex:selectOption itemLabel="ban" itemValue="ka"/>
+            <apex:selectOption itemLabel="che" itemValue="tn"/>
+        </apex:selectList><br/>
+        multiselect:
+        <apex:selectList multiselect="true">
+        	<apex:selectOption itemLabel="hyd" itemValue="tg"/>
+            <apex:selectOption itemLabel="ban" itemValue="ka"/>
+            <apex:selectOption itemLabel="che" itemValue="tn"/>
+        </apex:selectList><br/>
+        Radio:
+        <apex:selectRadio >
+        	<apex:selectOption itemLabel="hyd" itemValue="tg"/>
+            <apex:selectOption itemLabel="ban" itemValue="ka"/>
+            <apex:selectOption itemLabel="che" itemValue="tn"/>
+        </apex:selectRadio><br/>
+        checkbox:
+        <apex:selectCheckboxes >
+        	<apex:selectOption itemLabel="hyd" itemValue="tg"/>
+            <apex:selectOption itemLabel="ban" itemValue="ka"/>
+            <apex:selectOption itemLabel="che" itemValue="tn"/>
+        </apex:selectCheckboxes>
+    </apex:form>
+</apex:page>

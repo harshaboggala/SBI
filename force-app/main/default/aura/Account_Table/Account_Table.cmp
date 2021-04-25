@@ -1,0 +1,19 @@
+<aura:component controller="Account_Light">
+    
+    <aura:attribute name="data" type="object" />
+    <aura:attribute name="columns" type="List" />
+    <aura:handler event="aura:waiting" action="{!c.handleShowSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.handleHideSpinner}"/>
+     
+    
+    <aura:attribute name="showSpinner" type="boolean" default="false"/>
+    <!--Declare Attributes-->
+    <aura:handler name="init" value="{! this}" action="{!c.init}" /> 
+    <div class="box">
+        <aura:if isTrue="{!v.showSpinner}">
+        	<lightning:spinner alternativeText="Loading, Please Wait..." title="Loading, Please Wait..." variant="brand" size="large"/>
+        </aura:if>
+        <lightning:dataTable keyField="id" data="{!v.data}" columns="{!v.columns}" style="slds-table" />
+        
+	</div>
+</aura:component>

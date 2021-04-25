@@ -1,0 +1,37 @@
+<apex:page >
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<apex:form >
+
+<script>
+
+ function toggleDiv() {
+
+       $("[id$=a]").toggle();
+
+   }
+
+   function toggleDiv1() {
+        $("[id$=b]").toggle();
+   }
+</script>
+
+<apex:pageBlock >
+<a href="#" onclick="toggleDiv()">Uma</a>
+<a href="#" onclick="toggleDiv1()">NewTable</a>
+</apex:pageBlock>
+
+
+<apex:outputPanel id="a"  style="display:none;">
+    <apex:pageBlock id="a1">
+    <apex:outputLabel >UmaValue</apex:outputLabel>
+    </apex:pageBlock>
+</apex:outputPanel>  
+
+<apex:outputPanel id="b" style="display:none;">
+    <apex:pageBlock id="b1">
+    <apex:outputLabel >NewTableValue</apex:outputLabel>
+    </apex:pageBlock>
+</apex:outputPanel>
+
+</apex:form>
+</apex:page>

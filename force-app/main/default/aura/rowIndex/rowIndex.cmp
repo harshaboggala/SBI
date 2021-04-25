@@ -1,0 +1,45 @@
+<aura:component >
+    <aura:attribute name="nameList" type="string[]" default="['Andhra','telangana','karnataka','tamilnadu']" />
+    <aura:attribute name="selected" type="integer[]" default="[1,2,3,4]" />
+    <aura:attribute name="text" type="string" />
+    <aura:attribute name="textt" type="string" />
+    <!--<aura:handler name="init" value="{!this}" action="{!show}" />-->
+    <div class="box">
+        <div class="box2">
+    <table>
+        
+    	<thead>
+        	<tr>
+            	<th>
+                    <ui:inputCheckbox  aura:id="box" change="{!c.invokeAll}"/>
+                    Check
+                </th>
+                <th>
+                	States
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        	<aura:iteration items="{!v.nameList}" var="names" >
+            	<tr>
+                	<td scope="row" >
+                        <ui:inputCheckbox text="{!v.selected}" aura:id="boxId" change="{!c.invoke}" />
+                    </td>
+                    <td scope="row" >
+                    	{!names}
+                    </td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+            
+    </table>
+            <br/>
+    <lightning:input value="{!v.text}" label="Text" />
+        </div>
+        <br/>
+        <center>
+    <lightning:button onclick="{!c.show}" label="submit" />
+        </center>
+        Result: {!v.textt}
+        </div>
+</aura:component>

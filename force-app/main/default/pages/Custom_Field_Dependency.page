@@ -1,0 +1,21 @@
+<apex:page controller="Custom_Field_Dependency" >
+    <apex:form id="fm">
+    	<apex:pageBlock id="pb" >
+        	<apex:pageBlockSection id="pbs" >
+            	<apex:selectList size="1" value="{!state}" onchange="states()" >
+                    <apex:selectOptions value="{!stateList}" />
+                </apex:selectList>
+                <apex:actionFunction name="states" action="{!callme}" reRender="fm"/>
+                <apex:selectList size="1" value="{!dist}" onchange="districts()" rendered="{!flag1}">
+                    <apex:selectOptions value="{!distList}" />
+                </apex:selectList>
+                <apex:actionFunction name="districts" action="{!callmee}" reRender="fm" />
+                <apex:selectList size="1" value="{!place}" onchange="places()" rendered="{!flag2}">
+                    <apex:selectOptions value="{!placeList}" />
+                </apex:selectList>
+                <apex:actionFunction name="places" action="{!callmme}" reRender="fm"/>
+                <apex:outputText value="{!des}" rendered="{!flag3}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

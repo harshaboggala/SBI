@@ -1,0 +1,6 @@
+<apex:page controller="Student">
+    <apex:form >
+        Name:{!Name}<br/>
+        age:{!Age}
+    </apex:form>
+</apex:page>

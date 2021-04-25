@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="name" type="string" />
+    <aura:handler  event="c.first_event" action="{!c.show}" />
+    
+    <lightning:card title="parent Component" >
+    	{!v.name}
+    </lightning:card>
+    <c:comp_event />
+    <c:Component_B />
+</aura:component>

@@ -1,0 +1,110 @@
+<apex:page controller="eduDetails" sidebar="false" showHeader="false" id="page" >
+    <script>
+    	function rowValidation(thisid){
+            alert(thisid);
+        }
+    </script>
+    
+    <apex:form id="fm">
+    	<apex:pageBlock id="pb" title="Educational Qualifications" >
+            <apex:messages />
+        	<apex:pageBlockTable value="{!awList}" var="al" id="pbt" >
+            	<apex:column headerValue="Course Name">
+                	<apex:selectList value="{!al.CourseValue}" onchange="popupMenu()" size="1">
+                    	<apex:selectOptions value="{!al.picList}" />
+                    </apex:selectList>
+                </apex:column>
+                <apex:column headerValue="Your marks">
+                    <apex:outputText value="{!al.AquiredMarks}" id="um" />
+                </apex:column>
+                <apex:column headerValue="Total Marks">
+                    <apex:outputText value="{!al.TotalMarks}" id="tm"/>
+                </apex:column>
+                <apex:column headerValue="Your Percentage">
+                    <apex:outputText value="{!al.Percentage}" id="yp"/>
+                </apex:column>
+                <apex:column >
+                    <apex:commandLink action="{!editPopup}" value="Edit" id="eb" rendered="{!al.editFlag}">
+                    <apex:param name="editRow" assignTo="{!editRecord}" value="{!al.CourseValue}" />
+                    </apex:commandLink>
+                </apex:column>
+                <!-- <apex:column >
+                    <apex:commandButton value="Cancel" rendered="{!CancelFlag}" id="cb"/>
+                </apex:column> -->
+                <apex:column >                      
+              
+                <apex:commandLink action="{!removeRecord}" value="Cancel" rendered="{!al.CancelFlag}" onclick="if(!confirm('Are you sure?')) return false;">
+                 <apex:param name="cancelRow" assignTo="{!recordName}" value="{!al.CourseValue}"/>                 
+               </apex:commandLink>
+               </apex:column>
+                <apex:column >
+                    <apex:commandLink value="AddRow" action="{!AddRow}" id="ab" rendered="{!al.rowFlag}">
+                        <apex:param name="addrow" assignTo="{!rowName}" value="{!al.CourseValue}" />
+                    </apex:commandLink>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:actionFunction name="popupMenu" action="{!popup}" />
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton value="Submit" action="{!Submit}" rendered="{!SubmitFlag}"/>
+            </apex:pageBlockButtons>
+            <apex:outputLabel id="sscopl" rendered="{!sscFlag}" styleClass="customPopup">
+            	<apex:pageBlockSection id="pbs2" columns="1" title="{!aw.CourseValue}" collapsible="false" >
+                    <apex:inputText value="{!sm.Telugu}" label="Telugu" />
+                    <apex:inputText value="{!sm.Hindi}" label="Hindi"/>
+                    <apex:inputText value="{!sm.English}" label="English"/>
+                    <apex:inputText value="{!sm.Mathamatics}" label="Mathamatics"/>
+                    <apex:inputText value="{!sm.Science}" label="Science"/>
+                    <apex:inputText value="{!sm.Social}" label="Social"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:commandButton value="Submit" action="{!sscSubmit}" />
+                    <apex:commandButton value="Cancel" action="{!popupCancel}" />
+                </apex:pageBlockSection>
+            </apex:outputLabel>
+            <apex:outputLabel id="interopl" rendered="{!interFlag}" styleClass="customPopup">
+            	<apex:pageBlockSection id="pbs3" columns="1" title="{!aw.CourseValue}" collapsible="false">
+                    <apex:inputText value="{!im.Telugu}" label="Telugu"/>
+                    <apex:inputText value="{!im.English}" label="English"/>
+                    <apex:inputText value="{!im.Mathamatics}" label="Mathamatics"/>
+                    <apex:inputText value="{!im.Physics}" label="Physics"/>
+                    <apex:inputText value="{!im.Chemistry}" label="Chemistry"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:commandButton value="Submit" action="{!interSubmit}" />
+                    <apex:commandButton value="Cancel" action="{!popupCancel}" />
+                </apex:pageBlockSection>
+            </apex:outputLabel>
+            <apex:outputLabel id="gradopl" rendered="{!gradFlag}" styleClass="customPopup">
+            	<apex:pageBlockSection id="pbs4" columns="1" title="{!aw.CourseValue}" collapsible="false">
+                    <apex:inputText value="{!gm.Telugu}" label="Telugu"/>
+                    <apex:inputText value="{!gm.English}" label="English"/>
+                    <apex:inputText value="{!gm.Mathamatics}" label="Mathamatics"/>
+                    <apex:inputText value="{!gm.Computers}" label="Computers"/>
+                    <apex:inputText value="{!gm.Electronics}" label="Electronics"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:commandButton value="Submit" action="{!gradSubmit}" />
+                    <apex:commandButton value="Cancel" action="{!popupCancel}" />
+                </apex:pageBlockSection>
+            </apex:outputLabel>
+            
+        </apex:pageBlock>
+    </apex:form>
+    <style type="text/css">
+        #pbs2{
+        	background-color:White;
+        }
+.customPopup {
+    background-color: LightBlue;
+    border-style: solid;
+    border-width: 2px;
+    left: 30%;
+    padding: 10px;
+    position: absolute;
+    z-index: 9999;
+    
+    width: 500px;
+    top: 20%;
+}
+    </style>
+</apex:page>

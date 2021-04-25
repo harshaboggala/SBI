@@ -1,0 +1,18 @@
+<apex:page id="page">
+    <script>
+    	function add(){
+        	var aval=document.getElementById('page:fm:pb:aval').value;
+            var bval=document.getElementById('page:fm:pb:bval').value;
+            var cval=parseInt(aval)+parseInt(bval);
+            cval=document.getElementById('page:fm:pb:cval').value=cval;
+        }
+    </script>
+    <apex:form id="fm">
+    	<apex:pageblock id="pb">
+            <apex:inputtext id="aval"/><br/><br/>
+            <apex:inputtext id="bval"/><br/><br/>
+            <apex:inputtext id="cval"/><br/><br/>
+            <apex:commandbutton value="add" onclick="add()" rerender="fm"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

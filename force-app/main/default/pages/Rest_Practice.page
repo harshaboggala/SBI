@@ -1,0 +1,7 @@
+<apex:page controller="Rest_Practice">
+    <apex:form id="fm">
+    	<apex:inputText value="{!pin}"/>
+        <apex:commandButton value="search" action="{!search}" rerender="fm"/>
+        {!villeges}
+    </apex:form>
+</apex:page>

@@ -1,0 +1,36 @@
+<apex:page id="page" controller="gpay">
+    <script>
+    function current(c){
+        var city=c;
+            if(city!='')
+                document.getElementById('dest').style.display='block';
+    }
+    </script>
+    <apex:form id="form">
+    <apex:pageBlock id="pb1">
+    	<apex:pageBlockSection columns="1" id="pbs1">
+        	<apex:selectList label="select your current city" onclick="current(this)" id="current" value="{!c}">
+                <apex:selectOption itemLabel="hyd" itemValue="hyd"/>
+                <apex:selectOption itemLabel="che" itemValue="che"/>
+                <apex:selectOption itemLabel="ban" itemValue="ban"/>
+                <apex:selectOption itemLabel="delhi" itemValue="delhi"/>
+                <apex:selectOption itemLabel="mumbai" itemValue="mumbai"/>
+            </apex:selectList>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    <div style="display:none;" id="dest">
+    <apex:pageBlock id="pb2">
+        <apex:pageBlockSection columns="1" id="pbs2">
+            <apex:outputtext value="select your destination" />
+            <apex:inputcheckbox label="hyd" onclick="destination('hyd')"/>
+            <apex:inputcheckbox label="che" onchange="destination('che')"/>
+            <apex:inputcheckbox label="ban" onchange="destination('ban')"/>
+            <apex:inputcheckbox label="delhi" onchange="destination('delhi')"/>
+            <apex:inputcheckbox label="mumbai" onchange="destination('mumbai')"/>
+            <apex:inputText value="{!result}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </div>
+        
+    </apex:form>
+</apex:page>

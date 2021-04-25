@@ -1,0 +1,23 @@
+<aura:component controller="AccConOpp">
+    <aura:attribute name="Name" type="string" />
+    <aura:attribute name="acc" type="object" />
+    <aura:attribute name="accCol" type="list" />
+    <aura:attribute name="con" type="object" />
+    <aura:attribute name="conCol" type="list" />
+    <aura:attribute name="opp" type="object" />
+    <aura:attribute name="oppCol" type="list" />
+    <lightning:card title="Search" >
+        <lightning:input label="Enter Name" value="{!v.Name}" />
+        <lightning:button label="Search" onclick="{!c.show}"/>
+    </lightning:card>
+    <lightning:card title="Account" >
+        <lightning:dataTable keyField="id" data="{!v.acc}" columns="{!v.accCol}" />
+    </lightning:card><br/>
+    <lightning:card title="Contact"  >
+    	<lightning:dataTable keyField="id" data="{!v.con}" columns="{!v.conCol}" />
+    </lightning:card>
+    <lightning:card title="Opportunity"  >
+    	<lightning:dataTable keyField="id" data="{!v.opp}" columns="{!v.oppCol}" />
+    </lightning:card>
+    
+</aura:component>

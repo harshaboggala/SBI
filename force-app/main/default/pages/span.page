@@ -1,0 +1,24 @@
+<apex:page >
+<apex:form >
+ <script>
+    function myFunction(v) {
+     var option = v.value;
+     if(option =='CPF'){
+			 document.getElementById('CPF').style.display = 'block';
+			 document.getElementById('CNPJ').style.display = 'none';
+          }
+		else{
+            document.getElementById('CNPJ').style.display = 'block';
+            document.getElementById('CPF').style.display = 'none';
+            }
+    }    
+    </script>
+    <apex:selectRadio onchange="myFunction(this);">
+                        <apex:selectOption itemlabel="CPF" itemValue="CPF"/>   
+                        <apex:selectOption itemlabel="CNPJ" itemValue="CNPJ"/> 
+    </apex:selectRadio>                    
+    <span id="CPF"  style = "display:none"><apex:outputlabel value="hello"/> </span>
+    <span id="CNPJ" style = "display:none" ><apex:outputlabel value="hi"/></span>
+    
+    </apex:form>
+</apex:page>

@@ -1,0 +1,28 @@
+<apex:page standardController="Student__c" recordSetVar="aaa">
+    <apex:form >
+        <apex:pageBlock title="Student">
+            <apex:tabpanel switchtype="ajax">
+                <apex:tab label="pageblocktable" >
+                    <apex:pageBlockTable value="{!aaa}" var="a">
+                        <apex:column value="{!a.Name__c}" />
+                    </apex:pageBlockTable>
+                </apex:tab>
+                <apex:tab label="DataTable">
+                    <apex:dataTable value="{!aaa}" var="a">
+                        <apex:column value="{!a.Name__c}"/>
+                    </apex:dataTable>
+                </apex:tab>
+                <apex:tab label="DataList">
+                    <apex:dataList value="{!aaa}" var="a">
+                    	{!a.Name__c}
+                    </apex:dataList>
+                </apex:tab>
+                <apex:tab label="Repeat">
+                    <apex:repeat value="{!aaa}" var="a">
+                    	{!a.Name__c}
+                    </apex:repeat>
+                </apex:tab>
+            </apex:tabpanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

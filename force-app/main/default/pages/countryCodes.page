@@ -1,0 +1,15 @@
+<apex:page controller="countryCodes" id="page">
+    <apex:form id="fm1">
+        <apex:pageBlock id="pb">
+        <apex:pageblocksection >
+        <apex:selectList size="1" value="{!selected}" id="sl" onchange="functioncall()">
+        <apex:selectOptions value="{!options}"/>
+        </apex:selectList>
+        <apex:actionFunction action="{!callme}" reRender="pbs" name="functioncall" />
+        </apex:pageblocksection>
+        <apex:pageblocksection id="pbs">    
+            <apex:inputText id="result" value="{!result}" rendered="{!flag}" />
+        </apex:pageblocksection>
+            </apex:pageBlock>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,13 @@
+<aura:component controller="Dml_Light">
+    <aura:attribute name="Name" type="String" />
+    <aura:attribute name="Phone" type="String" />
+    <aura:attribute name="Industry" type="String" />
+    <aura:attribute name="Result" type="String" />
+    
+    <lightning:input label="Name" value="{!v.Name}" /><br/>
+    <lightning:input label="Phone" value="{!v.Phone}" /><br/>
+    <lightning:input label="Industry" value="{!v.Industry}" /><br/>
+    
+    <lightning:button label="save" onclick="{!c.show}" />
+    {!v.Result}
+</aura:component>

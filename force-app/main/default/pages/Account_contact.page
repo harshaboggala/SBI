@@ -1,0 +1,37 @@
+<apex:page controller="Account_Contact" id="page" >
+    <apex:slds />
+    <apex:form id="fm">
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="5">
+        	<apex:selectList value="{!field}" id="sl1" label="Field" size="1" >
+                <apex:selectOptions value="{!fieldSet}" />
+            </apex:selectList>
+        	<apex:selectList value="{!operator}" id="sl2" size="1" label="operator">
+                <apex:selectOptions value="{!optrList}" />
+            </apex:selectList>
+            <apex:inputText value="{!value}" label="value" id="it1" />
+            <apex:commandButton value="search" action="{!search}" reRender="fm" />
+        </apex:pageBlockSection>
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection id="pbs2" columns="4">
+        	<apex:selectList value="{!fieldSetSelected}" id="sl3" size="5" label="Fields" multiselect="true">
+                <apex:selectOptions value="{!fieldList}" />
+            </apex:selectList>
+            <apex:panelGrid columns="1">
+            	<apex:commandButton value="Add" action="{!Add}" reRender="pbs2" />
+            	<apex:commandButton value="Remove" action="{!Remove}" reRender="pbs2"/>
+            </apex:panelGrid>
+            <apex:selectList value="{!valueSetSelected}" id="sl4" size="5" label="Values" multiselect="true">
+                <apex:selectOptions value="{!selectedList}" />
+            </apex:selectList>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1">
+            <apex:pageBlockTable value="{!accList}" var="acc" cellpadding="10px" cellspacing="10px" border="10px">
+            	<apex:repeat value="{!fields}" var="a">
+                	<apex:column value="{!acc[a]}" />
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

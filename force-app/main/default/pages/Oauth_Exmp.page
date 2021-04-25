@@ -1,0 +1,28 @@
+<apex:page controller="Oauth_Exmp">
+    <apex:form id="fm" >
+    	<apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="clientid" />
+            		<apex:inputText value="{!clientid}" label="clientid" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="clientsecret" />
+            		<apex:inputText value="{!clientsecret}" label="clientsecret" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="username" />
+            		<apex:inputText value="{!username}" label="username"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="password" />
+            		<apex:inputText value="{!password}" label="password"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton value="Submit" action="{!callme}" reRender="fm" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        {!token}
+    </apex:form>
+</apex:page>

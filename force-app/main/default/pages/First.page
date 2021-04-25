@@ -1,0 +1,16 @@
+<apex:page >
+    <apex:form >
+    <apex:sectionHeader title="Employee" subtitle="New Employee" help="help"/>
+    <apex:pageBlock title="Employee" tabStyle="Account">
+        <apex:pageBlockButtons >
+    	<apex:commandButton value="submit"/>
+        <apex:commandButton value="cancel"/>
+    </apex:pageBlockButtons>
+    <apex:pageBlockSection >
+        Employee Name:<br/>
+        Employee Age<br/>
+        Employee Phone
+    </apex:pageBlockSection>
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>

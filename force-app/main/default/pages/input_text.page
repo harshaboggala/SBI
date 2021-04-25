@@ -1,0 +1,18 @@
+<apex:page >
+    <apex:form >
+        Input text	: <apex:inputtext maxlength="5"/><br/>
+        Max length	: <apex:inputText maxlength="10"/><br/>
+        Disable		: <apex:inputText disabled="true"/><br/>
+        direction	: <apex:inputText dir="RTL"/><br/>
+        Box Size	: <apex:inputText size="10"/><br/>
+        Rendered	: <apex:inputText rendered="true"/><br/>
+        Style		: <apex:inputText style="color:red;bgcolor:blue;"/><br/>
+        Required	: <apex:inputText required="true"/><br/>
+        password	: <apex:inputsecret /><br/>
+        textarea	: <apex:inputTextarea /><br/>
+        checkbox	: <apex:inputcheckbox /><br/>
+        hidden		: <apex:inputhidden /><br/>
+        chech
+        
+    </apex:form>
+</apex:page>

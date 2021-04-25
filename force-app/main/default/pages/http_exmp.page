@@ -1,0 +1,12 @@
+<apex:page controller="http_exmp">
+    <apex:form id="fm">
+        <apex:pageblock >
+    	<apex:inputText value="{!value}" />
+        <apex:commandButton value="Search" action="{!Search}" />
+        
+        	<apex:dataTable value="{!places}" var="a">
+            	<apex:column value="{!a}" />
+            </apex:dataTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

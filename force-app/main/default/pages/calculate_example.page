@@ -1,0 +1,26 @@
+<apex:page controller="Calculate">
+    <apex:form >
+        <apex:sectionheader title="calculater"/>
+        <apex:pageblock >
+            <apex:pageblockbuttons location="top" dir="RTL">
+                <apex:commandbutton value="sum" action="{!add}" rerender="a"/>
+                <apex:commandbutton value="mul" action="{!mul}" rerender="a"/>
+                <apex:commandbutton value="reset" action="{!reset}" rerender="a"/>
+            </apex:pageblockbuttons>
+            <apex:pageblocksection id="a" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="enter A value"/>
+                    <apex:inputtext value="{!a}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="enter B value"/>
+                    <apex:inputtext value="{!b}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Result"/>
+                    <apex:inputtext value="{!c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

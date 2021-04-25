@@ -1,0 +1,66 @@
+<aura:component controller="Light_Contact">
+    <aura:attribute name="Name" type="String" />
+    <aura:attribute name="data" type="Account" />
+    <aura:attribute name="fields" type="List" />
+    <aura:attribute name="conData" type="Contact" />
+    <aura:attribute name="sRows" type="List" />
+    <aura:attribute name="cFlag" type="boolean"/>
+    <aura:attribute name="selectedId" type="List"/>
+    <aura:attribute name="asFlag" type="boolean" />
+    <aura:attribute name="csFlag" type="boolean" />
+    
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}" />
+    <aura:handler event="aura:donewaiting" action="{!c.hideSpinner}" />
+    
+    <lightning:input value="{!v.Name}" />
+    <lightning:button label="search" onclick="{!c.Search}" />
+    <!--<lightning:dataTable keyField="Id" data="{!v.data}" selectedRows="{!v.sRows}" onrowselection="{!c.selectedRows}" columns="{!v.fields}" style="slds-table" checkbox="false"/> -->
+    <aura:if isTrue="{!v.csFlag}" >
+        <lightning:spinner alternativeText="Loading..." title="please wait..." />
+    </aura:if>
+    <Table>
+    	<thead>
+        	<tr>
+            	<th>
+                    <div><ui:inputCheckbox aura:id="box" change="{!c.selectAll}" /></div>
+                </th>
+                <th>
+                	<div>Id</div>
+                </th>
+                <th>
+                	<div>Name</div>
+                </th>
+                <th>
+                	<div>Rating</div>
+                </th>
+                
+            </tr>
+        </thead>
+        <aura:if isTrue="{!v.asFlag}" >
+        <lightning:spinner alternativeText="Loading..." title="please wait..." variant="brand" size="large"/>
+    </aura:if>
+        <tbody>
+        	<aura:iteration items="{!v.data}" var="abc">
+            	<tr>
+                    <td scope="row">
+                    	<div><ui:inputCheckbox text="{!abc.Id}" aura:id="sbox" value="" change="{!c.Contacts}"/></div>
+                    </td>
+                	<td scope="row">
+                    	<div>{!abc.Id}</div>
+                    </td>
+                    <td scope="row">
+                    	<div>{!abc.Name}</div>
+                    </td>
+                    <td scope="row">
+                    	<div>{!abc.Rating}</div>
+                    </td>
+                    
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </Table>
+    <!--<lightning:button label="delete" onclick="{!c.deleteRec}"/>-->
+    <aura:if isTrue="{!v.cFlag}">
+    	<lightning:dataTable data="{!v.conData}" columns="{!v.fields}" keyField="Id" />
+    </aura:if>
+</aura:component>

@@ -1,0 +1,6 @@
+<apex:page controller="Xml_Exmp">
+    <apex:form id="fm">
+    	
+        {!xmlString}
+    </apex:form>
+</apex:page>

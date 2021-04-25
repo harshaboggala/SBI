@@ -1,0 +1,11 @@
+<aura:component >
+	<lightning:select label="selectOne" value="selected" >
+    	<option value="one">one</option>
+        <option value="two">two</option>
+        <option value="three">three</option>
+    </lightning:select>
+    <aura:attribute type="list" name="option" default="[{'label':'java','value':'jdk'},
+                                                       {'label':'oracle','value':'database'},
+                                                       {'label':'ui','value':'html'}]" />
+    <lightning:checkboxGroup type="list" label="checkOne" options="{!v.option}" value="" onchange=""/>
+</aura:component>

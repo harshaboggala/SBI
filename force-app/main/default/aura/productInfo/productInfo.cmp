@@ -1,0 +1,15 @@
+<aura:component >
+    <div class="box">
+    <lightning:card title="Account" iconName="standard:account" class="first">
+        <lightning:input label="FirstName" />
+        <lightning:input label="LastName" />
+        <lightning:input label="Phone" />
+        <lightning:input label="Email" />
+    
+    <aura:set attribute="actions" >
+        <lightning:button label="save" />
+        <lightning:button label="cancel" />
+    </aura:set>
+    </lightning:card>
+    </div>
+</aura:component>

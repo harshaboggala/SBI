@@ -1,0 +1,18 @@
+<aura:component >
+	
+        <aura:attribute name="aval" type="integer" />
+        <aura:attribute name="bval" type="integer" />
+        <aura:attribute name="result" type="integer" />
+    <div class="box">
+    	<lightning:card title="calculater" >
+            
+            <lightning:input label="val1" value="{!v.aval}"/>
+            <lightning:input label="val2" value="{!v.bval}"/>
+            <lightning:input label="result" value="{!v.result}" />
+            <lightning:buttonGroup >
+            <lightning:button label="Add" onclick="{!c.addCall}"/>
+            <lightning:button label="Mul" onclick="{!c.mulCall}"/>
+            </lightning:buttonGroup>
+        </lightning:card>
+    </div>
+</aura:component>

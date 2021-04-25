@@ -1,0 +1,31 @@
+<apex:page controller="Pfizer_Reg_br" >
+    <apex:form id="fm">
+    	<apex:pageBlock >
+    	
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Brezil" action="{!Brezil}" reRender="fm" />
+            	<apex:commandButton value="France" action="{!France}" reRender="fm" />
+            </apex:pageBlockButtons>
+        
+        	<apex:outputPanel id="opp1" rendered="{!opp}" styleClass="customPopup">
+        		<apex:pageBlockSection id="pbs" >
+                    <apex:image value="{!$Resource.Pfizer}" dir="center" style="align:center"/>
+                </apex:pageBlockSection>
+        	</apex:outputPanel>
+    	</apex:pageBlock>
+        <style>
+        	.customPopup {
+    background-color: White;
+    border-style: solid;
+    border-width: 2px;
+    left: 40%;
+    padding: 10px;
+    position: absolute;
+    z-index: 9999;
+    
+    width: 400px;
+    
+}
+        </style>
+    </apex:form>
+</apex:page>
