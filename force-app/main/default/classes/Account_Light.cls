@@ -3,5 +3,6 @@ public class Account_Light {
     public static list<Account> invoke(){
         list<Account> accounts=[select id,name,phone from Account];
         return accounts;
+        //from vscode
     }
 }
